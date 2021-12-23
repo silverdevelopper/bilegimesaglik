@@ -1,0 +1,25 @@
+{
+  "bilegimesaglikApp": {
+    "nursingHomePatient": {
+      "home": {
+        "title": "Nursing Home Patients",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Nursing Home Patient",
+        "createOrEditLabel": "Create or edit a Nursing Home Patient",
+        "notFound": "No Nursing Home Patients found"
+      },
+      "created": "A new Nursing Home Patient is created with identifier {{ param }}",
+      "updated": "A Nursing Home Patient is updated with identifier {{ param }}",
+      "deleted": "A Nursing Home Patient is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nursing Home Patient {{ id }}?"
+      },
+      "detail": {
+        "title": "Nursing Home Patient"
+      },
+      "id": "ID",
+      "patient": "Patient",
+      "nusingHome": "Nusing Home"
+    }
+  }
+}

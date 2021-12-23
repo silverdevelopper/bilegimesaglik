@@ -1,0 +1,64 @@
+enum Type {
+	PATIENT,DOCTOR,NURSE,PATIENTRESPONSIBLE
+}
+entity People {
+   firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	birthDate Instant
+}
+
+entity PatientTask {
+	title String,
+	description String,
+    schedule String
+}
+
+entity NursingHome {
+	name String,
+    streetAddress String,
+	postalCode String,
+	city String,
+    country String
+}
+
+entity PatientAction {
+	startDate Instant,
+	endDate Instant,
+    actionDescription String,
+    healtstatus String
+}
+entity PeoplePatientResponsible {
+}
+entity NursingHomePatient {
+}
+
+relationship ManyToOne {
+	PatientTask{patient} to People
+}
+
+relationship ManyToOne {
+	PatientAction{patient} to People,
+    PatientAction{staff} to People
+}
+relationship ManyToOne {
+	NursingHomePatient{patient} to People,
+    NursingHomePatient{nusingHome} to NursingHome
+}
+
+relationship ManyToOne {
+	PeoplePatientResponsible{patient} to People,
+    PeoplePatientResponsible{responsiblePerson} to People
+}
+
+relationship OneToOne {
+      People{user} to User
+}
+
+// Set service options to all except few
+ service * with serviceClass paginate People, NursingHome, NursingHomePatient, PatientTask, PatientAction, PeoplePatientResponsible with pagination
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+

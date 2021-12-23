@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nursingHome">
+      <h2 data-cy="nursingHomeDetailsHeading"><span jhiTranslate="bilegimesaglikApp.nursingHome.detail.title">Nursing Home</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nursingHome.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHome.name">Name</span></dt>
+        <dd>
+          <span>{{ nursingHome.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHome.streetAddress">Street Address</span></dt>
+        <dd>
+          <span>{{ nursingHome.streetAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHome.postalCode">Postal Code</span></dt>
+        <dd>
+          <span>{{ nursingHome.postalCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHome.city">City</span></dt>
+        <dd>
+          <span>{{ nursingHome.city }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHome.country">Country</span></dt>
+        <dd>
+          <span>{{ nursingHome.country }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/nursing-home', nursingHome.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

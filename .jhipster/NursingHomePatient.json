@@ -1,0 +1,28 @@
+{
+  "name": "NursingHomePatient",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "people",
+      "otherEntityRelationshipName": "nursingHomePatient",
+      "relationshipName": "patient"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nursingHome",
+      "otherEntityRelationshipName": "nursingHomePatient",
+      "relationshipName": "nusingHome"
+    }
+  ],
+  "entityTableName": "nursing_home_patient",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223105308"
+}

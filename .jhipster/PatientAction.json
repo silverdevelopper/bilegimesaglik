@@ -1,0 +1,45 @@
+{
+  "name": "PatientAction",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "actionDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "healtstatus",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "people",
+      "otherEntityRelationshipName": "patientAction",
+      "relationshipName": "patient"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "people",
+      "otherEntityRelationshipName": "patientAction",
+      "relationshipName": "staff"
+    }
+  ],
+  "entityTableName": "patient_action",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223105306"
+}

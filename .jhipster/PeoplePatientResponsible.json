@@ -1,0 +1,28 @@
+{
+  "name": "PeoplePatientResponsible",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "people",
+      "otherEntityRelationshipName": "peoplePatientResponsible",
+      "relationshipName": "patient"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "people",
+      "otherEntityRelationshipName": "peoplePatientResponsible",
+      "relationshipName": "responsiblePerson"
+    }
+  ],
+  "entityTableName": "people_patient_responsible",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223105307"
+}

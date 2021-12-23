@@ -1,0 +1,9 @@
+export enum PType {
+  PATIENT = 'PATIENT',
+
+  DOCTOR = 'DOCTOR',
+
+  NURSE = 'NURSE',
+
+  PATIENTRESPONSIBLE = 'PATIENTRESPONSIBLE',
+}

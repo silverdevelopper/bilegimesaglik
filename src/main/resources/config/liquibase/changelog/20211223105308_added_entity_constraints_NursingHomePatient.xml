@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity NursingHomePatient.
+    -->
+    <changeSet id="20211223105308-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="patient_id"
+                                 baseTableName="nursing_home_patient"
+                                 constraintName="fk_nursing_home_patient__patient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="nusing_home_id"
+                                 baseTableName="nursing_home_patient"
+                                 constraintName="fk_nursing_home_patient__nusing_home_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nursing_home"/>
+    </changeSet>
+</databaseChangeLog>

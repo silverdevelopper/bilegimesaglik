@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="people">
+      <h2 data-cy="peopleDetailsHeading"><span jhiTranslate="bilegimesaglikApp.people.detail.title">People</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ people.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ people.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ people.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.email">Email</span></dt>
+        <dd>
+          <span>{{ people.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ people.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.birthDate">Birth Date</span></dt>
+        <dd>
+          <span>{{ people.birthDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.people.user">User</span></dt>
+        <dd>
+          <span>{{ people.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/people', people.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "bilegimesaglikApp": {
+    "PType": {
+      "null": "",
+      "PATIENT": "PATIENT",
+      "DOCTOR": "DOCTOR",
+      "NURSE": "NURSE",
+      "PATIENTRESPONSIBLE": "PATIENTRESPONSIBLE"
+    }
+  }
+}

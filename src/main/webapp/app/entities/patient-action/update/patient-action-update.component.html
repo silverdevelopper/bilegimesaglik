@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-patient-action-heading"
+        data-cy="PatientActionCreateUpdateHeading"
+        jhiTranslate="bilegimesaglikApp.patientAction.home.createOrEditLabel"
+      >
+        Create or edit a Patient Action
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.startDate" for="field_startDate"
+            >Start Date</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_startDate"
+              data-cy="startDate"
+              type="datetime-local"
+              class="form-control"
+              name="startDate"
+              formControlName="startDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.endDate" for="field_endDate">End Date</label>
+          <div class="d-flex">
+            <input
+              id="field_endDate"
+              data-cy="endDate"
+              type="datetime-local"
+              class="form-control"
+              name="endDate"
+              formControlName="endDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.actionDescription" for="field_actionDescription"
+            >Action Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="actionDescription"
+            id="field_actionDescription"
+            data-cy="actionDescription"
+            formControlName="actionDescription"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.healtstatus" for="field_healtstatus"
+            >Healtstatus</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="healtstatus"
+            id="field_healtstatus"
+            data-cy="healtstatus"
+            formControlName="healtstatus"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.patient" for="field_patient">Patient</label>
+          <select class="form-control" id="field_patient" data-cy="patient" name="patient" formControlName="patient">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="peopleOption.id === editForm.get('patient')!.value?.id ? editForm.get('patient')!.value : peopleOption"
+              *ngFor="let peopleOption of peopleSharedCollection; trackBy: trackPeopleById"
+            >
+              {{ peopleOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="bilegimesaglikApp.patientAction.staff" for="field_staff">Staff</label>
+          <select class="form-control" id="field_staff" data-cy="staff" name="staff" formControlName="staff">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="peopleOption.id === editForm.get('staff')!.value?.id ? editForm.get('staff')!.value : peopleOption"
+              *ngFor="let peopleOption of peopleSharedCollection; trackBy: trackPeopleById"
+            >
+              {{ peopleOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
