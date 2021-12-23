@@ -1,0 +1,27 @@
+{
+  "bilegimesaglikApp": {
+    "patientTask": {
+      "home": {
+        "title": "Patient Tasks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Patient Task",
+        "createOrEditLabel": "Create or edit a Patient Task",
+        "notFound": "No Patient Tasks found"
+      },
+      "created": "A new Patient Task is created with identifier {{ param }}",
+      "updated": "A Patient Task is updated with identifier {{ param }}",
+      "deleted": "A Patient Task is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Patient Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Patient Task"
+      },
+      "id": "ID",
+      "title": "Title",
+      "description": "Description",
+      "schedule": "Schedule",
+      "patient": "Patient"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "bilegimesaglikApp": {
+    "nursingHome": {
+      "home": {
+        "title": "Nursing Homes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Nursing Home",
+        "createOrEditLabel": "Create or edit a Nursing Home",
+        "notFound": "No Nursing Homes found"
+      },
+      "created": "A new Nursing Home is created with identifier {{ param }}",
+      "updated": "A Nursing Home is updated with identifier {{ param }}",
+      "deleted": "A Nursing Home is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nursing Home {{ id }}?"
+      },
+      "detail": {
+        "title": "Nursing Home"
+      },
+      "id": "ID",
+      "name": "Name",
+      "streetAddress": "Street Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "country": "Country"
+    }
+  }
+}

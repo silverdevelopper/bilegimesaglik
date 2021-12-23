@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nursingHomePatient">
+      <h2 data-cy="nursingHomePatientDetailsHeading">
+        <span jhiTranslate="bilegimesaglikApp.nursingHomePatient.detail.title">Nursing Home Patient</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nursingHomePatient.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHomePatient.patient">Patient</span></dt>
+        <dd>
+          <div *ngIf="nursingHomePatient.patient">
+            <a [routerLink]="['/people', nursingHomePatient.patient?.id, 'view']">{{ nursingHomePatient.patient?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="bilegimesaglikApp.nursingHomePatient.nusingHome">Nusing Home</span></dt>
+        <dd>
+          <div *ngIf="nursingHomePatient.nusingHome">
+            <a [routerLink]="['/nursing-home', nursingHomePatient.nusingHome?.id, 'view']">{{ nursingHomePatient.nusingHome?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/nursing-home-patient', nursingHomePatient.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
